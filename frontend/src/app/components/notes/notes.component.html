@@ -1,0 +1,10 @@
+<div class="lista" *ngIf="notes[0] == undefined">
+    <p>No tienes ninguna nota creada!</p>
+</div>
+
+<ul class="lista" >
+    <li class="item" *ngFor= "let note of notes" [routerLink]="['/editar-nota', note._id]"> 
+        <h2>{{note.titulo}}</h2>
+        <p>{{note.contenido}}</p>
+    </li>
+</ul>

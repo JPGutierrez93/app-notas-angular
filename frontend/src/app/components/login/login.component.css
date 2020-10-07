@@ -1,0 +1,11 @@
+.alert{
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 44, 44, 0.7);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: small;
+    padding-bottom: 0;
+    margin-top: 10px;
+
+}

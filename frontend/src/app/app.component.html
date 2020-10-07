@@ -1,0 +1,27 @@
+<body>
+  <nav>
+    <div class="nav">
+      <div class="left">
+        <a class="myapp" routerLink='/'>MI APP</a>
+        <a routerLink='/notas' routerLinkActive="active">NOTAS</a>
+        <a routerLink='/crear-nota' routerLinkActive="active">CREAR NOTA</a>
+      </div>
+      <div class="right">
+        <div *ngIf="!authService.loggedIn()">
+          <a routerLink='/signup' routerLinkActive="active">SIGN UP</a>
+          <a routerLink='/login' routerLinkActive="active">SIGN IN</a>
+        </div>
+        <div *ngIf="authService.loggedIn()" class="right">
+          <a class="bienvenida">Hola {{authService.nombreUsuario()}}!</a>
+          <a routerLink='/login' (click)="authService.logout()">SIGN OUT</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <router-outlet></router-outlet>
+
+  </div>
+</body>
+
+

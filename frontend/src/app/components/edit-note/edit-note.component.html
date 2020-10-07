@@ -1,0 +1,26 @@
+<h1>{{tituloPagina}}</h1>
+
+<div *ngIf="note">
+    <form class="form" #noteForm="ngForm" (ngSubmit)="editNote(noteForm)">
+
+        <div class="input">
+            <div class="lineas label"><label for="titulo">TÍTULO</label></div>
+            <div class="lineas"><input type="text" name="titulo" value="{{note.titulo}}" #titulo="ngModel" [(ngModel)]="note.titulo" required/></div>
+
+        </div>
+
+        <div class="input">
+            <div class="lineas label"><label for="contenido">CONTENIDO</label></div>
+            <div class="lineas"><textarea type="text" name="contenido" value="{{note.contenido}}" #contenido="ngModel" [(ngModel)]="note.contenido" required></textarea></div>
+
+        </div>
+
+        <div class="input">
+            <div class="lineas">
+                <input class="btn btn-edit" type="submit" value="MODIFICAR">
+                <input class="btn btn-danger" value="ELIMINAR" (click)="deleteNote()">
+            </div>
+        </div>
+
+    </form>
+</div>

@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-md-4 mx-auto">
+      
+        <div class="card">
+            <div class="card-header">
+                INICIAR SESIÓN
+            </div>
+            <div class="card-body">
+                <form (submit)="logIn()">
+                    <div class="form-group">
+                        <input type="text" [(ngModel)]="user.email" name="email" class="form-control" (focus)="setAuthAlertFalse()" placeholder="Email" required autofocus>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" [(ngModel)]="user.password" name="password" (focus)="setAuthAlertFalse()" class="form-control" placeholder="Contraseña" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">INICIAR SESIÓN</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="alert" *ngIf="authAlert">
+            <p>USUARIO INCORRECTO O CONTRASEÑA INCORRECTA!</p>
+        </div>
+
+    </div>
+</div>
